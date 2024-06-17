@@ -5,23 +5,88 @@
 }
  
 /* HEADER */
-header nav{
-    padding: 20px 20px 0px 20px;
-    text-align: center;
-}
 
 /* MAIN */
-body{
-    height: 100vh;
-}
-
-body > *{
+.grid-container{
+    display: grid;
+    place-items: center; /* forma de poner el eje y x alineados en un contenido*/
     text-align: center;
-    padding: 20px;
+    height: 100vh;
+    grid-template: 
+    "HEADER" 150px/*tamaño de filas eje Y*/
+    "NAVBAR" 50px
+    "MAIN" 580px
+    "ASIDE" 150px
+    "FOOTER" 150px
+    ;
+    gap: 25px;
+    
 }
 
+.grid-container > *{
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 12px 5px 10px rgba(0, 0, 0, 0.664);
+    border: 1px solid rgba(0, 0, 0, 0.438);
+    border-radius: 15px;
+    width: 400px;
+    height: 100%;
+}
+div > h2{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* ASIDE */
+.FOOTER{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* FOOTER */
+.FOOTER a{
+    color: rgb(75, 62, 192);
+}
 
+.HEADER{
+    grid-area: HEADER;
+    background-color: aqua;
+}
+
+.NAVBAR{
+    grid-area: NAVBAR;
+    background-color: aqua;
+}
+
+.MAIN{
+    grid-area: MAIN;
+    background-color: aqua;
+}
+
+.ASIDE{
+    grid-area: ASIDE;
+    background-color: aqua;
+}
+
+.FOOTER{
+    grid-area: FOOTER;
+    background-color: aqua;
+}
+
+/* RESPONSIVE */
+@media (min-width:768px){
+    .grid-container{
+    grid-template: 
+    "HEADER NAVBAR"250px /*tamaño de filas eje Y*/
+    "HEADER NAVBAR" 50px
+    "MAIN ASIDE" 300px 
+    "MAIN ASIDE" 350px
+    "MAIN ASIDE" 350px
+    "FOOTER FOOTER " 200px
+    ;
+    .FOOTER{
+        width: 100%;
+    }
+   }
+}

@@ -7,14 +7,52 @@
 /* BODY */
 body{
     height: 100vh;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .contenedor-grid{
+    display: grid; /* al poner la funcion "grid" hacemos que todos los elementos dentro del contenedor se adapten al alto de la pantalla */
+    background-color: rgb(135, 157, 177);
+    text-align: center;
     width: 600px;
     height: 600px;
+    grid-template-areas: 
+    "caja1" 
+    "caja2"
+    "caja3" 
+    ;
+    gap: 20px;
 }
 
 .contenedor-grid > *{
+    display: flex; /* centro lo que esta dentro de las cajas (caja1,caja2,caja3,caja4, etc) */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgb(154, 205, 250);
     border: 1px solid black;
 
+}
+
+/* diciendole a cada div que caja es */
+.caja1{
+    grid-area: caja1;
+}
+.caja1{
+    grid-area: caja2;
+}
+.caja1{
+    grid-area: caja3;
+}
+@media (min-width:600px){
+    .contenedor-grid{
+        grid-template-areas: 
+        "caja1 caja1 caja1" 200px
+        "caja2 caja2 caja2" 100px
+        "caja3 caja3 caja3" 50px
+        ;
+    }
 }

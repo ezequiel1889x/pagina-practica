@@ -1,0 +1,4 @@
+let = scope en bloque
+var = scope global
+
+undefined = esta definida la variable pero no te tira el valor

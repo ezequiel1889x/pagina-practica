@@ -13,11 +13,11 @@
     text-align: center;
     height: 100vh;
     grid-template: 
-    "HEADER" 150px/*tamaño de filas eje Y*/
+    "HEADER" 100px/*tamaño de filas eje Y*/
     "NAVBAR" 50px
-    "MAIN" 580px
-    "ASIDE" 150px
-    "FOOTER" 150px
+    "MAIN" 340px
+    "ASIDE" 160px
+    "FOOTER" 120px
     ;
     gap: 25px;
     
@@ -29,8 +29,24 @@
     box-shadow: 12px 5px 10px rgba(0, 0, 0, 0.664);
     border: 1px solid rgba(0, 0, 0, 0.438);
     border-radius: 15px;
-    width: 400px;
+    width: 300px;
     height: 100%;
+}
+
+.HEADER{
+    width: 97%;
+}
+.NAVBAR{
+    width: 97%;
+}
+.MAIN{
+    width: 97%;
+}
+.ASIDE{
+    width: 97%;
+}
+.FOOTER{
+    width: 97%;
 }
 div > h2{
     height: 100%;
@@ -50,7 +66,7 @@ div > h2{
 }
 
 .HEADER{
-    grid-area: HEADER;
+    grid-area: HEADER; /* nombro a cada area para despues hacer el templeate(grilla)*/
     background-color: aqua;
 }
 
@@ -77,16 +93,40 @@ div > h2{
 /* RESPONSIVE */
 @media (min-width:768px){
     .grid-container{
-    grid-template: 
-    "HEADER NAVBAR"250px /*tamaño de filas eje Y*/
-    "HEADER NAVBAR" 50px
-    "MAIN ASIDE" 300px 
-    "MAIN ASIDE" 350px
-    "MAIN ASIDE" 350px
-    "FOOTER FOOTER " 200px
+    grid-template: /* forma para armar la grilla*/
+    "HEADER NAVBAR" 100px/*tamaño de filas eje Y*/
+    "ASIDE MAIN" auto
+    "FOOTER FOOTER" 100px/ /* el "/" es para agregar al final de todo la anchura de la columna, se le pide que la primer fila tenga 200px y que la segunda fila se acomode a lo que queda de la pantalla*/
+    200px auto;
     ;
-    .FOOTER{
-        width: 100%;
-    }
    }
+}
+
+@media (min-width:992px){
+    .grid-container{
+        grid-template: /* forma para armar la grilla*/
+        "HEADER HEADER HEADER" 100px/*tamaño de filas eje Y*/
+        "NAVBAR MAIN ASIDE" auto
+            "FOOTER FOOTER FOOTER" 100px/
+        200px auto 200px /* con esto le digo al nav que tenga 200 main auto y aside 200*/
+        ;
+
+        .HEADER{
+            box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.664);
+            margin-left:25px ;
+        }
+        .NAVBAR{
+            box-shadow: -12px 5px 10px rgba(0, 0, 0, 0.664);
+            margin-left:25px ;
+        }
+        .ASIDE{
+            box-shadow: 12px 5px 10px rgba(0, 0, 0, 0.664);
+            margin-right:25px ;
+        }
+        .FOOTER{
+            box-shadow: 2px -5px 5px rgba(0, 0, 0, 0.664);
+            margin-right:25px ;
+        }
+
+       }
 }

@@ -107,7 +107,7 @@ div > h2{
         grid-template: /* forma para armar la grilla*/
         "HEADER HEADER HEADER" 100px/*tamaño de filas eje Y*/
         "NAVBAR MAIN ASIDE" auto
-            "FOOTER FOOTER FOOTER" 100px/
+        "FOOTER FOOTER FOOTER" 100px/
         200px auto 200px /* con esto le digo al nav que tenga 200 main auto y aside 200*/
         ;
 

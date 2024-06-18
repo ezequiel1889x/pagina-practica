@@ -80,15 +80,12 @@ body{
 .grid-area{
     text-align: center;
 }
-@media (min-width:610px){ /* */
+@media (min-width:599px){ /* su ancho no sera menor a 599px */
     .caja5{
         display: none;
     }
 }
-@media (max-width:600px){ /* si llega de 0 a un maximo de 600.. */
-    .caja5{
-        display: block;
-    }
+@media (max-width:600px){ /* su ancho no sera mayor a 600px */
     .contenedor-grid{
         width: 95%;
         grid-template-columns: repeat(3,1fr);

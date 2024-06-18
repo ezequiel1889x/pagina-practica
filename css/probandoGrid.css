@@ -3,7 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color: rgb(199, 174, 141);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 /* HEADER */
 
@@ -14,6 +21,24 @@ nav{
 nav a{
     text-decoration: none;
     color: blue;
+}
 
+/* MAIN */
+.contenedor-grid{
+    background-color: antiquewhite;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 
+}
+
+.contenedor-grid > *{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.493);
+    border: 1px solid black;
+    text-align: center;
 }

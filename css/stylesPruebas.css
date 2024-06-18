@@ -6,53 +6,117 @@
 
 /* BODY */
 body{
+    background-color: rgb(144, 174, 201);
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .contenedor-grid{
     display: grid; /* al poner la funcion "grid" hacemos que todos los elementos dentro del contenedor se adapten al alto de la pantalla */
-    background-color: rgb(135, 157, 177);
+    background-color: rgba(37, 33, 33, 0.267);
     text-align: center;
+    border-radius: 15px;
     width: 600px;
     height: 600px;
+    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
     grid-template-areas: 
-    "caja1" 
-    "caja2"
-    "caja3" 
+    "CAJA1 CAJA1 CAJA1"
+    "CAJA2 CAJA3 CAJA3"
+    "CAJA2 CAJA3 CAJA3"
+    "CAJA4 CAJA4 CAJA4"
     ;
-    gap: 20px;
 }
 
+.caja1{
+    /* FORMA 1 DE HACER LOS POSICIONAMIENTOS */
+    grid-column-start: CAJA1;
+    grid-column-end: CAJA1;
+}
+.caja1 a{
+    text-decoration: none;
+    color: blue;
+    font-size: 30px;
+}
+.caja2{
+    /* FORMA 2 DE HACER LOS POSICIONAMIENTOS Y ES LA MAS CORTA */
+    grid-row: CAJA2;
+}
+.caja3{
+    grid-row: CAJA3;
+    grid-column: CAJA3;
+}
+.caja4{
+    grid-column: CAJA4;
+}
+
+.caja5{
+    display: none;
+}
 .contenedor-grid > *{
     display: flex; /* centro lo que esta dentro de las cajas (caja1,caja2,caja3,caja4, etc) */
     justify-content: center;
     align-items: center;
-    height: 100%;
-    margin-bottom: 15px;
     border-radius: 15px;
     background-color: rgb(154, 205, 250);
     border: 1px solid black;
 
 }
 
-/* diciendole a cada div que caja es */
-.caja1{
-    grid-area: caja1;
+.info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    background-color: rgba(250, 235, 215, 0.459);
+    border-radius: 10%;
+    gap: 30px;
+    text-align: center;
+    
 }
-.caja1{
-    grid-area: caja2;
+
+.grid-area{
+    text-align: center;
 }
-.caja1{
-    grid-area: caja3;
+@media (min-width:610px){ /* */
+    .caja5{
+        display: none;
+    }
 }
-@media (min-width:600px){
+@media (max-width:600px){ /* si llega de 0 a un maximo de 600.. */
+    .caja5{
+        display: block;
+    }
     .contenedor-grid{
+        width: 95%;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(5,1fr);
         grid-template-areas: 
-        "caja1 caja1 caja1" 200px
-        "caja2 caja2 caja2" 100px
-        "caja3 caja3 caja3" 50px
+        "CAJA1 CAJA1 CAJA1"
+        "CAJA2 CAJA2 CAJA2"
+        "CAJA3 CAJA3 CAJA3"
+        "CAJA4 CAJA4 CAJA4"
+        "CAJA5 CAJA5 CAJA5"
         ;
+        .caja1{
+            grid-column: CAJA1;
+        }
+        .caja2{
+            grid-column: CAJA2;
+
+        }
+        .caja3{
+            grid-row: CAJA3;
+        }
+        .caja5{
+            display: flex;
+            grid-column: CAJA5;
+            height: 130px;
+        }
+    }
+    .info{
+        width: 95%;
     }
 }

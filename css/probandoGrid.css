@@ -3,3 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* HEADER */
+
+nav{
+    text-align: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: blue;
+
+
+}
